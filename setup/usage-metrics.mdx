@@ -1,0 +1,32 @@
+---
+title: "Usage & Metrics"
+description: "Connect usage data to explain cost changes"
+---
+
+Spend alone doesn't explain anything.
+
+Costory ingests:
+
+- Datadog metrics
+- Warehouse metrics
+- Custom business metrics
+
+Used for:
+
+- Explaining cost changes
+- Tracking cost-per-unit
+- Separating load vs inefficiency
+
+## Normalize with formulas
+
+Examples:
+
+- `cost / monthly_active_users`
+- `cost / (api_requests / 1_000_000)`
+- `(cost / revenue) * 100`
+- `cost / storage_gb`
+
+Lets you say things like:
+
+- "Cost per transaction +15%"
+- "Cost per API call improved after optimization"

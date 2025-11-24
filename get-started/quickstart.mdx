@@ -1,0 +1,75 @@
+---
+title: "Quickstart Guide"
+description: "Get started with Costory in three simple steps"
+---
+
+## Step 1 → Connect your first billing log
+
+Pick your cloud provider, plug in the billing export, and Costory starts ingesting raw line items.
+
+### GCP → BigQuery Billing Export
+
+You provide:
+
+- Billing export **table path**
+- View-only IAM access
+
+You need:
+
+- An active **Detailed Billing Export** in BigQuery
+- **GKE cost allocation** enabled (if running GKE)
+
+### AWS → CUR 2.0
+
+You provide:
+
+- Federated Role ARN
+- S3 bucket name
+- CUR 2.0 name
+
+Supported setup paths:
+
+- **CloudFormation template**
+- **Manual setup**
+
+Notes:
+
+- CUR 2.0 in **Parquet format** recommended
+- CUR does **not** need to live in the master payer account
+- Optional: **EKS / ECS allocation tags** for granular attribution
+
+### Azure → Cost Management Exports
+
+You provide:
+
+- SAS Token
+- Blob SAS URL
+- Container name
+- Storage account name
+
+After granting access, trigger a **backfill** from the Azure Cost Management export panel.
+
+## Step 2 → Receive your first Digest (your last-month summary)
+
+~24 hours after your first import, Costory generates your **Digest** summarizing the last complete month.
+
+You get:
+
+- What changed
+- A tree-structured breakdown of your infra
+- Automated analysis via **Billy** (time series, outlier detection, RCA hints)
+- A summary ready for Slack or review docs
+
+**It's the monthly review you already do — now automated.**
+
+## Step 3 → Build Scheduled Slack Reports
+
+Turn any Saved View into a recurring Slack report.
+
+- Weekly or monthly
+- Delivered to channels like `#platform`, `#sre`, `#leadership`
+- Includes: summary, deltas, investigation links
+
+You stop being the human router for "what happened on the bill?"
+
+Each squad gets *their* cost visibility and learns to own it.

@@ -1,0 +1,32 @@
+---
+title: "GCP Setup"
+description: "Connect GCP BigQuery Billing Export to Costory"
+---
+
+## What you provide
+
+- BigQuery table path
+
+## Prerequisites
+
+- Detailed Billing Export active
+- Costory service account (view-only)
+- GKE cost allocation (if GKE)
+- Dataset ideally in EU
+
+## Setup steps
+
+1. Confirm export is active
+2. Grant service account:
+    - BigQuery Data Viewer
+    - BigQuery Metadata Viewer
+3. Create GCP datasource
+4. Enter table path
+5. Request backfill
+
+## FAQ
+
+**No Backfill Yet?**
+
+- **Direct GCP:** Only the current month is backfilled
+- **Reseller:** Ask reseller to export historical data

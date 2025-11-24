@@ -1,0 +1,38 @@
+---
+title: "AWS Setup"
+description: "Connect AWS Cost and Usage Reports (CUR 2.0) to Costory"
+---
+
+## What you provide
+
+- IAM Role ARN
+- S3 bucket name
+- CUR 2.0 name
+
+## Prerequisites
+
+- **CUR 2.0** configured
+- Parquet recommended
+- Hourly or daily export
+- Optional: EKS/ECS tags
+
+## Setup steps
+
+1. Use CloudFormation or manual setup
+2. Configure CUR 2.0
+3. Grant Role access
+4. Create AWS datasource in Costory
+5. Enter Role ARN + S3 info
+6. Request backfill
+
+## FAQ
+
+**Parquet required?** Strongly recommended
+
+**Master payer?** Not required
+
+**Overwrite?** Yes — preferred
+
+**First data?** ~24 hours
+
+**No Backfill Yet?** AWS can backfill up to 12 months
